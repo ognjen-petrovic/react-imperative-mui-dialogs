@@ -3,7 +3,7 @@ Imperative React alert, confirm and prompt dialogs built with the MUI lib.
 
 ## Why?
 
-When it comes to simple dialogs React's declarative way seems cumbersome, in order to avoid a component state management this lib provides dialog the functions that have same signature as native window alert, confirm and propmpt functions.
+When it comes to simple dialogs React's declarative way seems cumbersome, in order to avoid a component state management this lib provides the dialog functions that have same signature as native window alert, confirm and propmpt functions.
 
 ## How?
 
