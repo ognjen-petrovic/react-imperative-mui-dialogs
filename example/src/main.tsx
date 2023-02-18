@@ -1,0 +1,13 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+import { AlertContextProvider, ImperativeMuiDialogsContextProvider } from '../../dist'
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+         <ImperativeMuiDialogsContextProvider>
+            <App />
+         </ImperativeMuiDialogsContextProvider>
+  </React.StrictMode>,
+)
