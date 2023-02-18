@@ -7,6 +7,7 @@ Imperative React alert, confirm and prompt dialogs built with the MUI lib
 ```console
 git clone git@github.com:ognjen-petrovic/react-imperative-mui-dialogs.git
 cd react-imperative-mui-dialogs
+npm install
 npm run start
 ```
 
