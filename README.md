@@ -1,6 +1,29 @@
 # react-imperative-mui-dialogs
-Imperative React alert, confirm and prompt dialogs built with the MUI lib 
+Imperative React alert, confirm and prompt dialogs built with the MUI lib.
 
+## Why?
+
+When it comes to simple dialogs React's declarative way seems cumbersome, in order to avoid component state management this lib provides dialog functions that have same signature as native window alert, confirm and propmpt functions.
+
+## How?
+
+Wrap app in ImperativeMuiDialogsContextProvider:
+```tsx
+<ImperativeMuiDialogsContextProvider>
+  <App />
+</ImperativeMuiDialogsContextProvider>
+```
+... and then hook to dialogs:
+
+```ts
+const alert = useAlert()
+const confirm = useConfirm()
+const prompt = usePrompt()
+
+alert('Hello world');
+confirm('Confirm action?')
+prompt('Please give me an answer?')
+``` 
 
 ## Run the example locally:
 
