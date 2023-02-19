@@ -1,1 +1,0 @@
-export { ImperativeMuiDialogsContextProvider } from './ImperativeMuiDialogsContext';
