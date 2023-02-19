@@ -7,23 +7,47 @@ When it comes to simple dialogs React's declarative way seems cumbersome, in ord
 
 ## How?
 
+Install package:
+
+```
+npm i imperativemuidialogs
+```
+
 Wrap app in ImperativeMuiDialogsContextProvider:
+
 ```tsx
-<ImperativeMuiDialogsContextProvider>
-  <App />
-</ImperativeMuiDialogsContextProvider>
+import { ImperativeMuiDialogsContextProvider } from 'imperativemuidialogs'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+    <ImperativeMuiDialogsContextProvider>
+      <App />
+    </ImperativeMuiDialogsContextProvider>
+  </React.StrictMode>,
+)
 ```
 
 ... and then hook to dialogs:
 
 ```ts
+import { useAlert, useConfirm, usePrompt } from 'imperativemuidialogs/dist/ImperativeMuiDialogsContext'
+
 const alert = useAlert()
 const confirm = useConfirm()
 const prompt = usePrompt()
 
-alert('Hello world');
-confirm('Confirm action?')
-prompt('Please give me an answer?')
+await alert('Hello world');
+
+if (await confirm('Confirm action?') {
+  //
+}
+
+const answer = await prompt('Please give me an answer?')
 ``` 
 
 ## Run the example locally:
