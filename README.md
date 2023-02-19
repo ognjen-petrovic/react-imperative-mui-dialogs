@@ -12,7 +12,7 @@ When it comes to simple dialogs React's declarative way seems cumbersome, in ord
 Install package:
 
 ```
-npm i imperativemuidialogsß
+npm i imperativemuidialogs
 ```
 
 Wrap app in ImperativeMuiDialogsContextProvider:
