@@ -37,7 +37,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 ... and then hook to dialogs:
 
 ```ts
-import { useAlert, useConfirm, usePrompt } from 'imperativemuidialogs/dist/ImperativeMuiDialogsContext'
+import { useAlert, useConfirm, usePrompt } from 'imperativemuidialogs'
 
 const alert = useAlert()
 const confirm = useConfirm()
