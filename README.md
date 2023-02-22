@@ -5,14 +5,14 @@ See the [example page](https://ognjen-petrovic.github.io/react-imperative-mui-di
 
 ## Why?
 
-When it comes to simple dialogs React's declarative way seems cumbersome, in order to avoid a component state management this lib provides the dialog functions that have same signature as native window alert, confirm and propmpt functions.
+When it comes to simple dialogs React's declarative way seems cumbersome, in order to avoid a component state management this lib provides the dialog functions that have same signature as native window alert, confirm and prompt functions.
 
 ## How?
 
 Install package:
 
 ```
-npm i imperativemuidialogsß
+npm i imperativemuidialogs
 ```
 
 Wrap app in ImperativeMuiDialogsContextProvider:
