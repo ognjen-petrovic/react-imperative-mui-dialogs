@@ -5,7 +5,8 @@ import { usePrompt, useConfirm, useAlert } from '../../dist';
 import { Container } from '@mui/system';
 import { memo, useCallback, useState } from 'react';
 
-const Item = memo(function Item({title, index, onDelete} : {title: string, index: number, onDelete: (index: number)=>void}) {
+const Item = memo(
+    function Item({title, index, onDelete} : {title: string, index: number, onDelete: (index: number)=>void}) {
     return (
         <ListItem
         secondaryAction={
@@ -24,7 +25,8 @@ const Item = memo(function Item({title, index, onDelete} : {title: string, index
         />
     </ListItem>
     )
-})
+}
+)
 
 function App() {
     const [items, setItems] = useState(['Item 1','item 2', 'Item 3']);

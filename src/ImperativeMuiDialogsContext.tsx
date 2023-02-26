@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext, useState } from "react";
+import React, { createContext, ReactNode, useContext, useMemo, useState } from "react";
 import { Alert } from "./components/alert/Alert";
 import {Prompt, promptDefaults, PromptReturnType} from './components/prompt/Prompt'
 import {Confirm} from './components/confirm/Confirm'
@@ -92,6 +92,14 @@ export function ImperativeMuiDialogsContextProvider({
         })
     }
 
+    const contextValue = useMemo(() => {
+        return {
+            alert: {open: openAlert},
+            confirm:{open: openConfirm},
+            prompt: {open: openPrompt}                  
+        } as ImperativeMuiDialogsContextType
+    }, [])
+
     function handleCloseAlert() {
         setAlertState({...alertState, isOpen: false})
         alertState.promise.resolve(undefined)
@@ -109,11 +117,7 @@ export function ImperativeMuiDialogsContextProvider({
 
     return (
         <ImperativeMuiDialogsContext.Provider 
-            value={{
-                alert: {open: openAlert},
-                confirm:{open: openConfirm},
-                prompt:{open: openPrompt}, 
-            }}>
+            value={contextValue}>
             {children}
             <Alert
                 isOpen={alertState.isOpen}
