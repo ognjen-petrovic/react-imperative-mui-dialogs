@@ -1,6 +1,6 @@
 {
   "name": "imperativemuidialogs",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Imperative React alert, confirm and prompt dialogs built with the MUI lib.",
   "main": "./dist/index.js",
   "files": [
