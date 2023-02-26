@@ -7,21 +7,27 @@ import { makeDialogTitle } from './../../utils'
 export type PromptReturnType = string | null
 
 export const promptDefaults = {
-    defaultAnswer: ''
+    defaultAnswer: '',
+    cancelBtnText: 'Cancel',
+    okBtnText: 'OK'
 }
 
 type PromptProps = {
     isOpen: boolean,
     handleClose: Dispatch<SetStateAction<string | null>> | ((answer: PromptReturnType) => void)
     question: string,
-    defaultAnswer?: string
+    defaultAnswer?: string,
+    cancelBtnText?: string,
+    okBtnText?: string
 }
 
 export function Prompt({ 
         isOpen, 
         handleClose, 
         question, 
-        defaultAnswer = promptDefaults.defaultAnswer
+        defaultAnswer = promptDefaults.defaultAnswer,
+        cancelBtnText = promptDefaults.cancelBtnText,
+        okBtnText = promptDefaults.okBtnText
     } : PromptProps) {
     const [answer, setAnswer] = useState(defaultAnswer)
 
@@ -55,10 +61,10 @@ export function Prompt({
             </DialogContent>
             <DialogActions>
                 <Button onClick={() => handleClose(null)}>
-                    Cancel
+                    {cancelBtnText}
                 </Button>
                 <Button onClick={() => handleClose(answer)}>
-                    OK
+                    {okBtnText}
                 </Button>
             </DialogActions>
         </Dialog>

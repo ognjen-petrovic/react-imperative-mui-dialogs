@@ -7,10 +7,11 @@ import { makeDialogTitle } from "../../utils";
 interface AlertProps {
     isOpen: boolean,
     handleClose: Dispatch<SetStateAction<boolean>> | (() => void)
-    message: string
+    message: string,
+    btnText?: string
 }
 
-export function Alert({ isOpen, handleClose, message }: AlertProps) {
+export function Alert({ isOpen, handleClose, message, btnText = 'OK' }: AlertProps) {
     return (
         <Dialog
             open={isOpen}
@@ -26,7 +27,7 @@ export function Alert({ isOpen, handleClose, message }: AlertProps) {
             </DialogContent>
             <DialogActions>
                 <Button onClick={() => handleClose(false)}>
-                    OK
+                    {btnText}
                 </Button>
             </DialogActions>
         </Dialog>

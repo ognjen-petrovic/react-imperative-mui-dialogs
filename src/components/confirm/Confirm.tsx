@@ -4,18 +4,31 @@ import {
 } from '@mui/material'
 import { makeDialogTitle } from "../../utils";
 
+export const confirmDefaults = {
+    cancelBtnText: 'Cancel',
+    okBtnText: 'OK'
+}
+
 interface ConfirmProps {
     isOpen: boolean,
     handleClose: Dispatch<SetStateAction<boolean>> | ((answer: boolean) => void)
-    question: string
+    question: string,
+    cancelBtnText?: string,
+    okBtnText?: string
 }
 
-export function Confirm({ isOpen, handleClose, question }: ConfirmProps) {
+export function Confirm({
+    isOpen,
+    handleClose,
+    question,
+    cancelBtnText = confirmDefaults.cancelBtnText,
+    okBtnText = confirmDefaults.okBtnText 
+}: ConfirmProps) {
     const cancelRef = useRef<HTMLAnchorElement>(null)
     function onEntered() {
         if (cancelRef.current) {
             cancelRef.current.focus()
-        } 
+        }
     }
     return (
         <Dialog
@@ -33,10 +46,10 @@ export function Confirm({ isOpen, handleClose, question }: ConfirmProps) {
             </DialogContent>
             <DialogActions>
                 <Button onClick={() => handleClose(false)} ref={cancelRef} href="">
-                    Cancel
+                    {cancelBtnText}
                 </Button>
                 <Button onClick={() => handleClose(true)}>
-                    OK
+                    {okBtnText}
                 </Button>
             </DialogActions>
         </Dialog>

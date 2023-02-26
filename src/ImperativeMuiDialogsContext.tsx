@@ -35,13 +35,26 @@ const ImperativeMuiDialogsContext = createContext<ImperativeMuiDialogsContextTyp
 ImperativeMuiDialogsContext.displayName = 'ImperativeMuiDialogsContext'
 
 type ImperativeMuiDialogsContextProps = {
-    children: ReactNode
+    children: ReactNode,
+    alert?: {
+        btnText: string
+    }
+    confirm?: {
+        cancelBtnText?: string,
+        okBtnText?: string
+    },
+    prompt?: {
+        cancelBtnText?: string,
+        okBtnText?: string
+    }
 }
 
 export function ImperativeMuiDialogsContextProvider({
-    children
+    children,
+    alert,
+    confirm,
+    prompt
 }: ImperativeMuiDialogsContextProps) {
-
     const [promptState, setPromptState] = useState({
         isOpen: false,
         question: '',
@@ -106,17 +119,22 @@ export function ImperativeMuiDialogsContextProvider({
                 isOpen={alertState.isOpen}
                 handleClose={ handleCloseAlert }
                 message={alertState.message}
+                btnText={alert?.btnText}
             ></Alert>
             <Confirm
                 isOpen={confirmState.isOpen}
                 handleClose={handleCloseConfirm}
                 question={confirmState.question}
+                cancelBtnText={confirm?.cancelBtnText}
+                okBtnText={confirm?.okBtnText}
             ></Confirm>
             <Prompt
                 isOpen={promptState.isOpen}
                 handleClose={handleClosePrompt}
                 question={promptState.question}
                 defaultAnswer={promptState.defaultAnswer}
+                cancelBtnText={prompt?.cancelBtnText}
+                okBtnText={prompt?.okBtnText}
             ></Prompt>
         </ImperativeMuiDialogsContext.Provider>
     )

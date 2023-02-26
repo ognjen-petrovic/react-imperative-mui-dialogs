@@ -6,7 +6,7 @@ import { ImperativeMuiDialogsContextProvider } from '../../dist'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-         <ImperativeMuiDialogsContextProvider>
+         <ImperativeMuiDialogsContextProvider alert={{btnText: 'si'}}>
             <App />
          </ImperativeMuiDialogsContextProvider>
   </React.StrictMode>,
