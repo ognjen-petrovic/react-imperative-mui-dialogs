@@ -1,4 +1,4 @@
-# react-imperative-mui-dialogs
+# Imperative MUI React dialogs
 Imperative React alert, confirm and prompt dialogs built with the MUI lib.
 
 See the [example page](https://ognjen-petrovic.github.io/react-imperative-mui-dialogs/example/dist/index.html)

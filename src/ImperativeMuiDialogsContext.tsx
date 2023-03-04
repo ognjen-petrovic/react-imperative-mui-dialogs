@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext, useMemo, useState } from "react";
+import React, { createContext, PropsWithChildren, useContext, useMemo, useState } from "react";
 import { Alert } from "./components/alert/Alert";
 import {Prompt, promptDefaults, PromptReturnType} from './components/prompt/Prompt'
 import {Confirm} from './components/confirm/Confirm'
@@ -34,8 +34,7 @@ const ImperativeMuiDialogsContext = createContext<ImperativeMuiDialogsContextTyp
 })
 ImperativeMuiDialogsContext.displayName = 'ImperativeMuiDialogsContext'
 
-type ImperativeMuiDialogsContextProps = {
-    children: ReactNode,
+export type ImperativeMuiDialogsContextProps = {
     alert?: {
         btnText: string
     }
@@ -54,7 +53,7 @@ export function ImperativeMuiDialogsContextProvider({
     alert,
     confirm,
     prompt
-}: ImperativeMuiDialogsContextProps) {
+}: PropsWithChildren<ImperativeMuiDialogsContextProps>) {
     const [promptState, setPromptState] = useState({
         isOpen: false,
         question: '',
